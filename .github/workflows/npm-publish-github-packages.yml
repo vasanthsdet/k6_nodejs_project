@@ -1,0 +1,26 @@
+name: Run Load Test
+
+on: [push]
+
+jobs:
+  load-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18' # Specify the Node.js version you want to use
+
+      - name: Install k6
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y k6
+
+      - name: Install npm dependencies
+        run: npm install
+
+      - name: Run k6 load test
+        run: node run-k6.js
