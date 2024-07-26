@@ -59,25 +59,6 @@ If you are a developer who wants to contribute to the project, please follow the
 
  - Analyze the results
 
-   ```
-
-             /\      |‾‾| /‾‾/   /‾‾/
-     /\  /  \     |  |/  /   /  /
-    /  \/    \    |     (   /   ‾‾\
-   /          \   |  |\  \ |  (‾)  |
-  / __________ \  |__| \__\ \_____/ .io
-
-  ```
-
-  ```
-    
-    execution: local
-     script: test-script.js
-     output: -
-
-   ```
-
-
     ```
      data_received..................: 253 kB 8.3 kB/s
      data_sent......................: 17 kB  560 B/s
