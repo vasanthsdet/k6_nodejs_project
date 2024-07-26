@@ -20,4 +20,5 @@ If you are a developer who wants to contribute to the project, please follow the
 #### Verify Installation
     ```
     k6 version
+    
     ```
