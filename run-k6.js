@@ -9,7 +9,7 @@ exec('k6 run scripts/test-script.js', (err, stdout, stderr) => {
     console.error(`k6 stderr: ${stderr}`);
 });
 
-exec('k6 run scripts/test-post_script.js', (err, stdout, stderr) => {
+exec('k6 run scripts/test_post_script.js', (err, stdout, stderr) => {
     if (err) {
         console.error(`Error executing k6 script: ${err}`);
         return;
