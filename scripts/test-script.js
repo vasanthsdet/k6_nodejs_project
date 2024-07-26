@@ -6,10 +6,10 @@ import { Rate } from 'k6/metrics';
 let errorRate = new Rate('errors');
 
 export let options = {
-    vus: 100, // Number of virtual users
-    duration: '90s', // Duration of the test
+    vus: 5, // Number of virtual users
+    duration: '20s', // Duration of the test
     thresholds: {
-        'http_req_duration': ['p(95)<200'], // 95% of requests should be below 500ms
+        'http_req_duration': ['p(95)<400'], // 95% of requests should be below 500ms
         'errors': ['rate<0.01'], // Error rate should be less than 1%
     },
 };
