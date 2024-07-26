@@ -1,20 +1,33 @@
 const { exec } = require('child_process');
 
-exec('k6 run scripts/test-script.js', (err, stdout, stderr) => {
-    if (err) {
-        console.error(`Error executing k6 script: ${err}`);
-        return;
-    }
-    console.log(`k6 stdout: ${stdout}`);
-    console.error(`k6 stderr: ${stderr}`);
-});
+const runK6Test = (scriptPath) => {
+  return new Promise((resolve, reject) => {
+    exec(`k6 run ${scriptPath}`, (error, stdout, stderr) => {
+      if (error) {
+        console.error(`Error running k6 script ${scriptPath}: ${error.message}`);
+        return reject(error);
+      }
+      if (stderr) {
+        console.error(`Error output of k6 script ${scriptPath}: ${stderr}`);
+      }
+      console.log(`Output of k6 script ${scriptPath}: ${stdout}`);
+      resolve(stdout);
+    });
+  });
+};
 
-exec('k6 run scripts/test_post_script.js', (err, stdout, stderr) => {
-    if (err) {
-        console.error(`Error executing k6 script: ${err}`);
-        return;
-    }
-    console.log(`k6 stdout: ${stdout}`);
-    console.error(`k6 stderr: ${stderr}`);
-});
+const runTests = async () => {
+  try {
+    // Run GET script
+    await runK6Test('test-script.js');
+    
+    // Run POST script
+    await runK6Test('test_post_script.js');
+    
+  } catch (error) {
+    console.error('One or more k6 scripts failed');
+    process.exit(1);
+  }
+};
 
+runTests();
