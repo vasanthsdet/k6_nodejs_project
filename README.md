@@ -75,11 +75,6 @@ If you are a developer who wants to contribute to the project, please follow the
      script: test-script.js
      output: -
 
-   scenarios: (100.00%) 1 scenario, 10 max VUs, 40s max duration (incl. graceful stop):
-           * default: 10 looping VUs for 30s (gracefulStop: 30s)
-
-   running (30.4s), 00/10 VUs, 171 complete and 0 interrupted iterations
-   default ✓ [======================================] 10 VUs  30s
    ```
 
 
