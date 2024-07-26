@@ -70,16 +70,20 @@ If you are a developer who wants to contribute to the project, please follow the
   ```
 
   ```
-  execution: local
+    
+    execution: local
      script: test-script.js
      output: -
 
-  scenarios: (100.00%) 1 scenario, 10 max VUs, 40s max duration (incl. graceful stop):
+   scenarios: (100.00%) 1 scenario, 10 max VUs, 40s max duration (incl. graceful stop):
            * default: 10 looping VUs for 30s (gracefulStop: 30s)
 
-running (30.4s), 00/10 VUs, 171 complete and 0 interrupted iterations
-default ✓ [======================================] 10 VUs  30s
+   running (30.4s), 00/10 VUs, 171 complete and 0 interrupted iterations
+   default ✓ [======================================] 10 VUs  30s
+   ```
 
+
+    ```
      data_received..................: 253 kB 8.3 kB/s
      data_sent......................: 17 kB  560 B/s
      http_req_blocked...............: avg=1.31ms   min=0s       med=0s       max=137.82ms p(90)=0s      p(95)=0s     
