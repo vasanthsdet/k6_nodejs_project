@@ -19,10 +19,10 @@ const runK6Test = (scriptPath) => {
 const runTests = async () => {
   try {
     // Run GET script
-    await runK6Test('test-script.js');
+    await runK6Test('scripts/test-script.js');
     
     // Run POST script
-    await runK6Test('test_post_script.js');
+    await runK6Test('scripts/test_post_script.js');
     
   } catch (error) {
     console.error('One or more k6 scripts failed');
