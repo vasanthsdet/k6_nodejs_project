@@ -16,8 +16,10 @@ jobs:
 
       - name: Install k6
         run: |
-          sudo apt-get update
-          sudo apt-get install -y k6
+          wget https://github.com/k6io/k6/releases/download/v0.42.0/k6-v0.42.0-linux-amd64.tar.gz
+          tar -xvf k6-v0.42.0-linux-amd64.tar.gz
+          sudo mv k6-v0.42.0-linux-amd64/k6 /usr/local/bin/
+
 
       - name: Install npm dependencies
         run: npm install
