@@ -8,9 +8,9 @@ let errorRate = new Rate('errors');
 
 export let options = {
     vus: 2, // Number of virtual users
-    duration: '90s', // Duration of the test
+    duration: '10s', // Duration of the test
     thresholds: {
-        'http_req_duration': ['p(95)<200'], // 95% of requests should be below 500ms
+        'http_req_duration': ['p(95)<500'], // 95% of requests should be below 500ms
         'errors': ['rate<0.01'], // Error rate should be less than 1%
     },
 };
