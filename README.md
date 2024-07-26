@@ -17,8 +17,9 @@ If you are a developer who wants to contribute to the project, please follow the
    sudo mv k6-v0.42.0-linux-amd64/k6 /usr/local/bin/
 
    ```
-#### Verify Installation
-    ```
+- Verify Installation
+
+   ```
     k6 version
-    
-    ```
+
+   ```
